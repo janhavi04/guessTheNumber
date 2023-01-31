@@ -19,6 +19,16 @@ const displayMessage = function (message) {
 };
 
 document.querySelector(".check").addEventListener("click", function () {
+  game();
+});
+
+document.querySelector(".guess").addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    game();
+  }
+});
+
+function game() {
   const guess = Number(document.querySelector(".guess").value);
   console.log(guess, typeof guess);
 
@@ -78,7 +88,7 @@ document.querySelector(".check").addEventListener("click", function () {
   //       document.querySelector(".score").textContent = 0;
   //     }
   //}
-});
+}
 
 document.querySelector(".again").addEventListener("click", function () {
   score = 20;
